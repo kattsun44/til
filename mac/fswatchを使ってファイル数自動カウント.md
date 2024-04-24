@@ -8,10 +8,9 @@ brew install fswatch
 ```bash
 #!/bin/bash
 
-count_md=$(find . -name '*.md' | wc -l | sed "s/ //g")
-count_til=$((count_md - 1)) # README.md 分マイナス
+count=$(find . -name '*.md' -mindepth 2 | wc -l | sed "s/ //g")
 
-sed -i '' "s/Markdown files: [0-9]*/Markdown files: $count_til/" README.md
+sed -i '' "s/Markdown files: [0-9]*/Markdown files: $count/" README.md
 ```
 
 [auto_update_info.sh](../auto_update_info.sh)
