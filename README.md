@@ -1,4 +1,6 @@
 # til
 Today I Learned
 
-Markdown files: 5
+[List](LIST.md)
+
+Markdown files: 6
