@@ -1,4 +1,4 @@
 # til
 Today I Learned
 
-Markdown files: 1
+Markdown files: 2
