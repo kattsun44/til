@@ -3,4 +3,4 @@ Today I Learned
 
 [List](LIST.md)
 
-Markdown files: 6
+Markdown files: 7
