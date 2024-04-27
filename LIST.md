@@ -17,6 +17,10 @@
 
 - [fswatchを使ってファイル数自動カウント.md](./mac/fswatchを使ってファイル数自動カウント.md)
 
+### ruby
+
+- [Rubyにおけるクラスの定義.md](./ruby/Rubyにおけるクラスの定義.md)
+
 ### shell_script
 
 - [自動で目次リストを作成する.md](./shell_script/自動で目次リストを作成する.md)
