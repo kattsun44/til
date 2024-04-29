@@ -19,6 +19,7 @@
 
 ### ruby
 
+- [Comparableモジュール.md](./ruby/Comparableモジュール.md)
 - [Enumerableモジュール.md](./ruby/Enumerableモジュール.md)
 - [Rubyにおけるクラスの定義.md](./ruby/Rubyにおけるクラスの定義.md)
 - [Rubyにおけるモジュールの概要.md](./ruby/Rubyにおけるモジュールの概要.md)
