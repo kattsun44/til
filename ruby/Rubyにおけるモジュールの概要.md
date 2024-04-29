@@ -40,6 +40,28 @@ admin.hello #=> "Hello!"
 
 複数のクラスにまたがる共通の機能 (e.g. ログ機能) を実装する際に用いられる。
 
+[[include?]] を呼ぶと引数で渡したモジュールが include されているかどうかが分かる。
+また、[[included_modules]] を呼ぶと include されているモジュールの配列が返る。
+```rb
+User.include?(Greetable) #=> true
+User.included_modules #=> [Greetable, PP::ObjectMixin, Kernel]
+
+user = User.new
+user.class.included_modules #=> [Greetable, PP::ObjectMixin, Kernel]
+```
+
+[[ancestors]] を使うとスーパークラスの情報も含まれる。
+```rb
+User.ancestors #=> [User, Greetable, Object, PP::ObjectMixin, Kernel, BasicObject]
+```
+
+インスタンスに対しては [[class]] メソッド経由で上記メソッドを呼ぶか、直接 [[is_a?]] でモジュールを include しているか判定できる。
+```rb
+user = User.new
+user.class.included_modules #=> [Greetable, PP::ObjectMixin, Kernel]
+user.is_a?(Greetable) #=> true
+```
+
 ### extend
 モジュールをクラス (や他のモジュール) に [[extend]] すると、モジュール内のメソッドを特異メソッドとして呼び出すことができる。
 ```rb
@@ -54,3 +76,5 @@ module AnotherGreetable end
 AnotherGreetable.extend Greetable
 AnotherGreetable.hello #=> "Hello!"
 ```
+
+source: [[『プロを目指す人のためのRuby入門［改訂2版］』]]
