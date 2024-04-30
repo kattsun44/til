@@ -24,6 +24,7 @@
 - [Kernelモジュール.md](./ruby/Kernelモジュール.md)
 - [Rubyにおけるクラスの定義.md](./ruby/Rubyにおけるクラスの定義.md)
 - [Rubyにおけるモジュールの概要.md](./ruby/Rubyにおけるモジュールの概要.md)
+- [ruby-exeption.md](./ruby/ruby-exeption.md)
 - [特異メソッド.md](./ruby/特異メソッド.md)
 
 ### shell_script
