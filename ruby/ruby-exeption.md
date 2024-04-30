@@ -54,13 +54,13 @@ rescue 節に Exeption を指定すると、NoMemoryError や SystemExit など�
 begin
   'abc'.foo
 rescue NameError => e
-  puts e.message
+  puts "NameError: #{e.message}"
 rescue NoMethodError => e
   # NoMethodError は NameError のサブクラス
   # NameError が必ず先に捕捉されるため、この rescue 節は永遠に実行されない
-  puts e.message
+  puts "NoMethodError: #{e.message}"
 end
-#=> undefined method `foo' for "abc":String
+#=> NameError: undefined method `foo' for "abc":String
 ```
 
 source: [[『プロを目指す人のためのRuby入門［改訂2版］』]]
