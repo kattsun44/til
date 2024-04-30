@@ -21,6 +21,7 @@
 
 - [Comparableモジュール.md](./ruby/Comparableモジュール.md)
 - [Enumerableモジュール.md](./ruby/Enumerableモジュール.md)
+- [Kernelモジュール.md](./ruby/Kernelモジュール.md)
 - [Rubyにおけるクラスの定義.md](./ruby/Rubyにおけるクラスの定義.md)
 - [Rubyにおけるモジュールの概要.md](./ruby/Rubyにおけるモジュールの概要.md)
 - [特異メソッド.md](./ruby/特異メソッド.md)
