@@ -32,9 +32,9 @@ end
 # -----
 ```
 
-### クラス指定による補足例外の限定
+### クラス指定による捕捉例外の限定
 例外には多くの種類があり、例外ごとにクラスが異なる (e.g. NoMethodError, ZeroDivisionError)。
-[[rescue]] で例外のクラスを指定すると、クラスが一致したときだけその例外を補足するようにできる。
+[[rescue]] で例外のクラスを指定すると、クラスが一致したときだけその例外を捕捉するようにできる。
 
 ```rb
 begin
@@ -47,9 +47,9 @@ end
 すべての例外クラスは [[Exeption]] クラスを継承している。
 [[StandardError]] クラスは通常のプログラムで発生する例外を表す。[[NoMethodError]] や [[ZeroDivisionError]] は StandardError のサブクラス。
 
-rescue 節に Exeption を指定すると、NoMemoryError や SystemExit などプログラムに無関係な例外まで補足してしまう。Ruby の例外処理で補足するのは [[StandardError]] とそのサブクラスに限定すべき。
+rescue 節に Exeption を指定すると、NoMemoryError や SystemExit などプログラムに無関係な例外まで捕捉してしまう。Ruby の例外処理で捕捉するのは [[StandardError]] とそのサブクラスに限定すべき。
 
-また、rescue 節で補足する例外の継承関係を考慮しないと、永遠に実行されない節を書いてしまう可能性がある。例外を複数節で補足する場合は、サブクラス → スーパークラスの順で書くと良い。
+また、rescue 節で捕捉する例外の継承関係を考慮しないと、永遠に実行されない節を書いてしまう可能性がある。例外を複数節で捕捉する場合は、サブクラス → スーパークラスの順で書くと良い。
 ```rb
 begin
   'abc'.foo
@@ -57,7 +57,7 @@ rescue NameError => e
   puts e.message
 rescue NoMethodError => e
   # NoMethodError は NameError のサブクラス
-  # NameError が必ず先に補足されるため、この rescue 節は永遠に実行されない
+  # NameError が必ず先に捕捉されるため、この rescue 節は永遠に実行されない
   puts e.message
 end
 #=> undefined method `foo' for "abc":String
