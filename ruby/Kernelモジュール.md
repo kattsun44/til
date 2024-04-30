@@ -22,3 +22,5 @@ irb(main):003:0> puts self
 main
 => nil
 ```
+
+source: [[『プロを目指す人のためのRuby入門［改訂2版］』]]

@@ -27,7 +27,7 @@ tags:
 
 ## Backlinks
 ```dataview
-list from [[202404232339 Goが利用される場面]] sort title
+list from [[Goが利用される場面]] sort title
 ```
 
 ## Review Days
