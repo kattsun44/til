@@ -32,6 +32,6 @@ Go を使っている企業
 
 ## Backlinks
 ```dataview
-list from [[202404232318 Goの歴史]] sort title
-where file.name != "202404232318 Goの歴史"
+list from [[Goの歴史]] sort title
+where file.name != "Goの歴史"
 ```

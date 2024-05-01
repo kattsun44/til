@@ -29,7 +29,7 @@ tags:
 
 ## Backlinks
 ```dataview
-list from [[202404240803 なぜGoが使われるのか]] sort title
+list from [[なぜGoが使われるのか]] sort title
 ```
 
 ## Review Days
