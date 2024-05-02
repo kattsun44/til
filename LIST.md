@@ -11,6 +11,7 @@
 - [Go言語の基本的な構文.md](./go/Go言語の基本的な構文.md)
 - [deferの基本的な文法.md](./go/deferの基本的な文法.md)
 - [goroutineの基本的な文法.md](./go/goroutineの基本的な文法.md)
+- [io.WriterはOSが持つファイルのシステムコールの相似形.md](./go/io.WriterはOSが持つファイルのシステムコールの相似形.md)
 - [なぜGoが使われるのか.md](./go/なぜGoが使われるのか.md)
 
 ### mac
