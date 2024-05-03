@@ -33,3 +33,4 @@ list from [[Goが利用される場面]] sort title
 ## Review Days
 Review Days … [[2024-04-24]], [[2024-04-30]], [[2024-05-23]]
 
+source: [[『Go言語プログラミングエッセンス』]]

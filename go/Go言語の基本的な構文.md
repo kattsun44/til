@@ -89,3 +89,5 @@ const (
 )
 fmt.Println(Apple, Orange, Banana) //=> 0 2 5
 ```
+
+source: [[『Go言語プログラミングエッセンス』]]

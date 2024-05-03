@@ -35,3 +35,5 @@ Go を使っている企業
 list from [[Goの歴史]] sort title
 where file.name != "Goの歴史"
 ```
+
+source: [[『Go言語プログラミングエッセンス』]]

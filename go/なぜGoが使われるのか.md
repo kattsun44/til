@@ -35,3 +35,4 @@ list from [[なぜGoが使われるのか]] sort title
 ## Review Days
 Review Days … [[2024-04-25]], [[2024-05-01]], [[2024-05-24]]
 
+source: [[『Go言語プログラミングエッセンス』]]
