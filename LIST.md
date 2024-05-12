@@ -34,6 +34,10 @@
 - [ruby-yield.md](./ruby/ruby-yield.md)
 - [特異メソッド.md](./ruby/特異メソッド.md)
 
+### shell
+
+- [redirect.md](./shell/redirect.md)
+
 ### shell_script
 
 - [自動で目次リストを作成する.md](./shell_script/自動で目次リストを作成する.md)
