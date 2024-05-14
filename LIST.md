@@ -18,6 +18,10 @@
 
 - [referer.md](./http/referer.md)
 
+### javascript
+
+- [Cannot-use-import-statement-outside-a-module.md](./javascript/Cannot-use-import-statement-outside-a-module.md)
+
 ### mac
 
 - [fswatchを使ってファイル数自動カウント.md](./mac/fswatchを使ってファイル数自動カウント.md)
