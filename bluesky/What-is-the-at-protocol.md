@@ -1,7 +1,7 @@
 ## AT Protocol とは
 [[AT Protocol]] (Authenticated Transfer Protocol: atproto) とは、
 
-- ドメインによって名前付けされた Personal Data Server (PDS)
+- ドメインによって名前付けされた Personal Data Server ([PDS](PDS.md))
 - PDS のデータを同期する Crawling Indexer
 
 という複数のプロトコルからなる集合の総称。
