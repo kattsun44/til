@@ -1,5 +1,5 @@
 ## AT Protocol とは
-[[AT Protocol]] とは、
+[[AT Protocol]] (Authenticated Transfer Protocol: atproto) とは、
 
 - ドメインによって名前付けされた Personal Data Server (PDS)
 - PDS のデータを同期する Crawling Indexer
