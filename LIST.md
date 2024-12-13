@@ -2,7 +2,7 @@
 
 ### bluesky
 
-- [PDS.md](./bluesky/PDS.md)
+- [Personal-data-server.md](./bluesky/Personal-data-server.md)
 - [What-is-the-at-protocol.md](./bluesky/What-is-the-at-protocol.md)
 
 ### find
@@ -13,6 +13,7 @@
 
 - [Goが利用される場面.md](./go/Goが利用される場面.md)
 - [Goの歴史.md](./go/Goの歴史.md)
+- [Goの配列.md](./go/Goの配列.md)
 - [Go言語の基本的な構文.md](./go/Go言語の基本的な構文.md)
 - [deferの基本的な文法.md](./go/deferの基本的な文法.md)
 - [goroutineの基本的な文法.md](./go/goroutineの基本的な文法.md)
