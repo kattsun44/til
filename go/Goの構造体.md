@@ -136,3 +136,5 @@ type fifthPerson struct {
 |thirdPerson|✕ (フィールドの順番が異なるため)|✕ (型が異なるため)|
 |fourthPerson|✕ (フィールド名が異なるため)|✕ (型が異なるため)|
 |fifthPerson|✕ (フィールドの数が異なるため)|✕ (型が異なるため)|
+
+source: [[『初めてのGo言語』]]

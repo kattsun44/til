@@ -15,6 +15,7 @@
 - [Goの構造体.md](./go/Goの構造体.md)
 - [Goの歴史.md](./go/Goの歴史.md)
 - [Goの配列.md](./go/Goの配列.md)
+- [Goの関数.md](./go/Goの関数.md)
 - [Go言語の基本的な構文.md](./go/Go言語の基本的な構文.md)
 - [deferの基本的な文法.md](./go/deferの基本的な文法.md)
 - [goroutineの基本的な文法.md](./go/goroutineの基本的な文法.md)
