@@ -66,6 +66,18 @@ Go言語の関数は「[[値]] (value)」。関数の型はキーワード `func
 - `opFunc` の型は `func(int, int) int`
 - キーに結びつけられた関数がマップになければエラー
 
+```shell
+% go run go/example/expression.go
+[2 + 3] → 5
+[2 - 3] → -1
+[2 * 3] → 6
+[2 / 3] → 0
+[2 % 3] -- 定義されていない演算子です: %
+[two + three] -- strconv.Atoi: parsing "two": invalid syntax
+[2 + three] -- strconv.Atoi: parsing "three": invalid syntax
+[5] -- 不正な式です
+```
+
 ### 関数型の宣言
 
 [[関数型]]を定義するときにも `type` が使える。
@@ -94,5 +106,54 @@ Goにおいて関数は変数に代入できるだけではなく、名前を持
 無名関数を宣言する場合は、キーワード `func` + 引数 + 戻り値 + `{` を書く。`func` と引数の間に関数名を書くとコンパイルエラー。
 
 無名関数は [[defer]] 文や[[ゴルーチン]]の起動で役立つ。
+
+## クロージャ
+
+関数内で定義された関数のことを[[クロージャ]] (closure) と呼ぶ。
+
+クロージャの機能
+
+1) 関数のスコープを制限する
+2) 関数内で定義された変数をその環境ごと包み込み、持ち出して関数の外で使えるようにする (→ [関数引数](#関数引数))
+
+### 関数引数
+
+関数は値であり、かつ引数と戻り値の型によって関数の型が特定できるため、関数を別の関数に引数として渡すことができる。ローカル変数を参照するクロージャを作成し、そのクロージャを別の関数に渡すことで、[[局所変数]]を外に持ち出せるようになる。
+
+**例: スライスのソート ([[sort.Slice]])**
+[[sort.Slice]] は引数にスライスと関数を取り、関数がスライスのソートに使われる。
+
+[example/sort_slice.go](example/sort_slice.go)
+
+```shell
+% go run go/example/sort_slice.go
+初期データ:  [{Pat Patterson 37} {Tracy Bobbert 23} {Fred Fredson 18}]
+姓でソート:  [{Tracy Bobbert 23} {Fred Fredson 18} {Pat Patterson 37}]
+年齢でソート:  [{Fred Fredson 18} {Tracy Bobbert 23} {Pat Patterson 37}]
+ソート後の people:  [{Fred Fredson 18} {Tracy Bobbert 23} {Pat Patterson 37}]
+```
+
+sort.Slice に渡されるクロージャには `i` と `j` の2個の引数しかないが、クロージャ内からは `people` を参照できるため、`people` のフィールド (`LastName`, `Age`) でソートできる。これを、「`people` はクロージャによって **捕捉された** (captured)」と言うことがある。
+
+スライス `people` は sort.Slice の呼び出しによって変更される。
+
+### 関数から関数を返す
+
+関数からクロージャを返すこともできる。
+
+例 … [example/make_mult.go](example/make_mult.go)
+
+```shell
+% go run go/example/make_mult.go
+0: 0, 0
+1: 2, 3
+2: 4, 6
+3: 6, 9
+4: 8, 12
+5: 10, 15
+```
+
+関数 `makeMult` は「「掛け算をする関数」を返す関数」であり、クロージャを返す。
+
 
 source: [[『初めてのGo言語』]]
