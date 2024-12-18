@@ -13,6 +13,7 @@
 
 - [Goが利用される場面.md](./go/Goが利用される場面.md)
 - [Goのポインタ.md](./go/Goのポインタ.md)
+- [Goの型.md](./go/Goの型.md)
 - [Goの構造体.md](./go/Goの構造体.md)
 - [Goの歴史.md](./go/Goの歴史.md)
 - [Goの配列.md](./go/Goの配列.md)
