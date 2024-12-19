@@ -52,13 +52,25 @@ graph TD
 
 [^2024-12-20-075542]: https://go.dev/wiki/CodeReviewComments#receiver-type に "- Don’t mix receiver types. Choose either pointers or struct types for all available methods." とあったが、理由は書かれていない。<br>[【Go】値レシーバとポインタレシーバの違いと使い分けについて考える \#Go - Qiita](https://qiita.com/fujita-goq/items/ed8e8730b0976c3ff3a6) には「一つの型で値レシーバとポインタレシーバを混在させない（**統一性のため**）」とある。
 
-ポインタレシーバに対してポインタでないローカル変数を渡すと、Goは自動的に変数をポインタ型に変換する。[pointer_and_value_receivers.go](example/pointer_and_value_receivers.go) の例で言えば `c.Increment()` は `(&c).Increment()` に自動変換されて呼び出される。
+ポインタレシーバに対してポインタでないローカル変数を渡すと、Goは自動的に変数をポインタ型に変換する。[この例](example/pointer_and_value_receivers.go) で言えば `c.Increment()` は `(&c).Increment()` に自動変換されて呼び出される。
 
-```go
+```shell
 % go run go/example/pointer_and_value_receivers.go
 合計: 0, 更新: 0001-01-01 00:00:00 +0000 UTC
 合計: 1, 更新: 2024-12-20 08:10:13.068416 +0900 JST m=+0.000084043
 ```
+
+[関数に値を渡すときのルール](Goのポインタ.md#ポインタはミュータブルの印)が依然として適用されていることに注意する。関数にポインタではない引数を渡し、その値でポインタレシーバのメソッドを呼び出した場合、コピーに対してメソッドを呼び出していることになる。[この例](example/pointer_and_value_receivers2.go) を実行すると以下の出力が得られる。
+
+```shell
+% go run go/example/pointer_and_value_receivers2.go
+NG: 合計: 1, 更新: 2024-12-20 08:27:54.184754 +0900 JST m=+0.000045709
+main: 合計: 0, 更新: 0001-01-01 00:00:00 +0000 UTC
+OK: 合計: 1, 更新: 2024-12-20 08:27:54.184871 +0900 JST m=+0.000162709
+main: 合計: 1, 更新: 2024-12-20 08:27:54.184871 +0900 JST m=+0.000162709
+```
+
+`doUpdateRight` の引数の型は `*Counter` (型 `Counter` のポインタ, ポインタインスタンス)。これに関しては `Increment`, `String` どちらも呼び出すことができる。
 
 
 
