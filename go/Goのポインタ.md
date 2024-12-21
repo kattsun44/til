@@ -95,4 +95,23 @@ func main() {
 
 ![ポインタを変更する間違った方法と正しい方法](images/ポインタを変更する間違った方法と正しい方法.png)
 
+### nilポインタは更新できない
+
+関数にポインタとして [[nil]] を渡した場合、その値は `nil` 以外に変えることができない[^2024-12-21-131431]。
+
+[^2024-12-21-131431]: 書籍内ではポインタのコピーを渡している関数 (`failedUpdate`) を例として挙げているが、それは「nilポインタが更新できない例」ではなく「デリファレンスしなければならない例」では？？
+
+
+```go
+func update(px *int) {
+	*px = 10
+}
+
+func main() {
+	var f *int
+	update(f) // panic: runtime error: invalid memory address or nil pointer dereference
+	fmt.Println(f)
+}
+```
+
 source: [[『初めてのGo言語』]]
