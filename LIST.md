@@ -24,6 +24,7 @@
 - [goroutineの基本的な文法.md](./go/goroutineの基本的な文法.md)
 - [io.WriterはOSが持つファイルのシステムコールの相似形.md](./go/io.WriterはOSが持つファイルのシステムコールの相似形.md)
 - [なぜGoが使われるのか.md](./go/なぜGoが使われるのか.md)
+- [埋め込みによる合成.md](./go/埋め込みによる合成.md)
 
 ### http
 
