@@ -42,3 +42,96 @@ type Stringer interface {
 
 [^2024-12-24-091501]: インタフェースと具象型の「分離」が達成され、コードの[[変更容易性]]が高められるということらしい。
 
+## インタフェースは型安全なダックタイピング
+
+Python, Ruby, JavaScript などの[[動的型付け]]の言語にはインタフェースがない代わりに、[[ダックタイピング]][^2024-12-24-215017]を使う。
+
+[^2024-12-24-215017]: 「アヒルのように歩き、アヒルのようにガアガア鳴くなら、それはアヒルだ」という表現に由来する言葉。「関数 `f` を起動する方法を見つけられるなら、その (ある型の) インスタンス `t` は関数 `f` の引数にできる」という考え方。
+
+```python
+class Logic:
+    def process(self, data):
+        # ビジネスロジックがここに書かれる
+        print(data)
+
+def program(logic):
+    # どこからかデータを取得
+    logic.process(data)
+
+logicToUse = Logic()
+program(logicToUse)
+```
+
+一方で、Java のプログラマーはインタフェースを定義し、そのインタフェースを実装するが、使う側 (`Client`) コード中ではインタフェースだけを参照する。
+
+```java
+public interface Logic {
+  String process(String data);
+}
+
+public class LogicImpl implements Logic {
+  public String process(String data) {
+    // ビジネスロジックがここに書かれる
+  }
+}
+
+public class Client {
+    private final Logic logic; // この型はインタフェースで、実装ではない
+
+    public Client(Logic logic) {
+        this.logic = logic;
+    }
+
+    public void program() {
+      // どこからかデータを取得
+      this.logic.process(data);
+    }
+}
+
+public static void main(String[] args) {
+  Logic logic = new LogicImpl();
+  Client client = new Client(logic);
+  client.program(); // 1
+}
+```
+
+Go は2つのスタイル混ぜ合わせたものになる。
+
+```go
+package main
+
+type LogicProvider struct{}
+
+func (lp LogicProvider) Process(data string) string {
+	// ビジネスロジックがここに書かれる
+	return data
+}
+
+type Logic interface {
+	Process(data string) string
+}
+
+type Client struct {
+	L Logic
+}
+
+func (c Client) Program() {
+	// どこからかデータを取得
+	c.L.Process(data)
+}
+
+func main() {
+	c := Client{
+		L: LogicProvider{},
+	}
+	c.Program()
+}
+```
+
+Goではインタフェースを知っているのは呼び出し側 (`Client`) だけ。呼び出される `LogicProvider` はインタフェースに適合していることを示すものが何も宣言されていない。これにより、
+
+- 将来新しいロジックを組み込むことができる[^2024-12-24-222740]
+- クライアントに渡された任意の型がクライアントの要求にマッチすることを保証する、実行可能なドキュメントを提供できる
+
+[^2024-12-24-222740]: (1) どこに？ (2) Java の場合は新しいロジックを組み込むことができない？
+
