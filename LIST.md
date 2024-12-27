@@ -63,6 +63,10 @@
 
 - [scroll-to-text-fragment.md](./url/scroll-to-text-fragment.md)
 
+### 専門性
+
+- [専門性の身につけ方.md](./専門性/専門性の身につけ方.md)
+
 ### 計画
 
 - [計画の目的.md](./計画/計画の目的.md)
