@@ -1,5 +1,9 @@
 # List
 
+### architecture
+
+- [適切なアーキテクチャスタイルを選ぶ.md](./architecture/適切なアーキテクチャスタイルを選ぶ.md)
+
 ### bluesky
 
 - [Personal-data-server.md](./bluesky/Personal-data-server.md)
@@ -49,6 +53,7 @@
 - [Kernelモジュール.md](./ruby/Kernelモジュール.md)
 - [Rubyにおけるクラスの定義.md](./ruby/Rubyにおけるクラスの定義.md)
 - [Rubyにおけるモジュールの概要.md](./ruby/Rubyにおけるモジュールの概要.md)
+- [Rubyの数値.md](./ruby/Rubyの数値.md)
 - [ruby-exeption.md](./ruby/ruby-exeption.md)
 - [ruby-raise.md](./ruby/ruby-raise.md)
 - [ruby-yield.md](./ruby/ruby-yield.md)
