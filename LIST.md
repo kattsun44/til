@@ -71,6 +71,10 @@
 
 - [scroll-to-text-fragment.md](./url/scroll-to-text-fragment.md)
 
+### web
+
+- [WWW発展の歴史.md](./web/WWW発展の歴史.md)
+
 ### 専門性
 
 - [専門性の身につけ方.md](./専門性/専門性の身につけ方.md)
