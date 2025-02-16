@@ -2,6 +2,7 @@
 
 ### architecture
 
+- [C4モデルとは.md](./architecture/C4モデルとは.md)
 - [アーキテクチャ思考で物事を見るためには.md](./architecture/アーキテクチャ思考で物事を見るためには.md)
 - [適切なアーキテクチャスタイルを選ぶ.md](./architecture/適切なアーキテクチャスタイルを選ぶ.md)
 
